@@ -1,0 +1,100 @@
+.qr-header {
+  background: var(--purple);
+  padding: 12px 20px 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.qr-score-wrap {
+  display: flex;
+  justify-content: center;
+  margin: -26px 0 10px;
+  position: relative;
+  z-index: 2;
+}
+.qr-score-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--purple);
+  box-shadow: 0 4px 20px rgba(92,78,229,0.2);
+}
+.qr-score-big { font-size: 22px; font-weight: 800; color: var(--purple); line-height: 1; }
+
+.qr-accuracy-label { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
+.qr-accuracy-ring-wrap { display: flex; justify-content: center; }
+
+.qr-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.qr-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px !important;
+}
+.qr-stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon-green { background: #E6F9F0; }
+.icon-green i { color: #1A9E61; font-size: 16px; }
+.icon-red { background: #FFE9E9; }
+.icon-red i { color: #E24B4A; font-size: 16px; }
+.icon-purple { background: var(--purple-light); }
+.icon-purple i { color: var(--purple); font-size: 16px; }
+.icon-orange { background: #FFF0E6; }
+.icon-orange i { color: #E07B3A; font-size: 16px; }
+.qr-stat-val { font-size: 15px; font-weight: 800; color: var(--text-mid); }
+.qr-stat-lbl { font-size: 10px; color: var(--text-muted); }
+
+.qr-rank-banner {
+  background: var(--purple);
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.qr-rank-badge {
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.qr-answer-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 7px;
+}
+.qr-ans-indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+  color: #fff;
+}
+.qr-ans-indicator.correct { background: #1A9E61; }
+.qr-ans-indicator.wrong { background: #E24B4A; }

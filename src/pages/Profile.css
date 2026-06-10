@@ -1,0 +1,84 @@
+.profile-header {
+  background: var(--purple);
+  padding: 10px 20px 0;
+  flex-shrink: 0;
+}
+.profile-avatar-wrap { position: relative; }
+.profile-avatar {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  border: 3px solid rgba(255,255,255,0.5);
+  display: flex; align-items: center; justify-content: center;
+}
+.profile-avatar i { color: #fff; font-size: 36px; }
+.profile-avatar-edit {
+  position: absolute; bottom: 0; right: 0;
+  width: 24px; height: 24px;
+  background: var(--white); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.profile-avatar-edit i { color: var(--purple); font-size: 13px; }
+.profile-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.profile-stat {
+  padding: 14px 8px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.profile-stat:last-child { border-right: none; }
+.profile-stat i { color: rgba(255,255,255,0.8); font-size: 18px; display: block; margin-bottom: 5px; }
+.profile-stat-num { font-size: 18px; font-weight: 800; color: #fff; }
+.profile-stat-lbl { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: .06em; }
+.profile-tabs {
+  background: var(--white);
+  display: flex;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+.profile-tab {
+  flex: 1;
+  padding: 12px 4px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2.5px solid transparent;
+  transition: all 0.15s;
+}
+.profile-tab.active { color: var(--purple); border-bottom-color: var(--purple); }
+.profile-streak-bar-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.profile-streak-day { display: flex; flex-direction: column; align-items: center; }
+.profile-streak-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #E2E0FF;
+}
+.profile-streak-day.done .profile-streak-dot { background: #FF8C42; }
+.profile-badge {
+  background: var(--purple-light);
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 13px;
+  border-radius: 20px;
+}
+.profile-mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.profile-mini-stat {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 6px; padding: 18px 12px !important;
+  text-align: center;
+}
