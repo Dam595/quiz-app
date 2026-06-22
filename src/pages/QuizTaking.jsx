@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
 import StatusBar from '../components/StatusBar.jsx'
-import BottomNav from '../components/BottomNav.jsx'
 import './QuizTaking.css'
 
 export default function QuizTaking({ quiz, onFinish }) {
   const [current, setCurrent] = useState(0)
   const [selected, setSelected] = useState(null)
   const [confirmed, setConfirmed] = useState(false)
-  const [answers, setAnswers] = useState([]) // { questionId, chosen, correct }
+  const [answers, setAnswers] = useState([])
   const [timeLeft, setTimeLeft] = useState(quiz.timeLimit)
   const timerRef = useRef(null)
 
@@ -90,14 +89,12 @@ export default function QuizTaking({ quiz, onFinish }) {
         </div>
       </div>
 
-      <div className="screen-body">
-        {/* Question */}
+      <div className="screen-body qt-body">
         <div className="card">
           <div className="qt-qnum">Câu {current + 1}</div>
           <div className="qt-qtext">{question.text}</div>
         </div>
 
-        {/* Options */}
         <div className="qt-options">
           {question.options.map((opt, idx) => (
             <div
@@ -117,7 +114,6 @@ export default function QuizTaking({ quiz, onFinish }) {
           ))}
         </div>
 
-        {/* Hint */}
         {confirmed && (
           <div className="qt-hint">
             <i className="ti ti-bulb" />
@@ -125,7 +121,6 @@ export default function QuizTaking({ quiz, onFinish }) {
           </div>
         )}
 
-        {/* Action button */}
         {!confirmed ? (
           <button
             className="btn-primary"
@@ -141,7 +136,6 @@ export default function QuizTaking({ quiz, onFinish }) {
           </button>
         ) : null}
 
-        {/* Mini progress dots */}
         <div className="qt-dots">
           {quiz.questions.map((_, i) => {
             let cls = 'dot'
@@ -150,12 +144,10 @@ export default function QuizTaking({ quiz, onFinish }) {
             return <div key={i} className={cls} />
           })}
         </div>
-        <div style={{ textAlign: 'center', fontSize: 11, color: '#9B9AC0', marginBottom: 16 }}>
+        <div style={{ textAlign: 'center', fontSize: 11, color: '#9B9AC0', marginBottom: 8 }}>
           {correctCount} đúng · {wrongCount} sai · {remaining} chưa làm
         </div>
       </div>
-
-      <BottomNav active="profile" />
     </div>
   )
 }

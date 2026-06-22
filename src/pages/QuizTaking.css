@@ -114,3 +114,7 @@
 .dot.dot-wrong { background: #E24B4A; }
 
 .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+/* Không còn BottomNav → giảm padding-bottom xuống vừa đủ */
+.qt-body {
+  padding-bottom: 24px;
+}

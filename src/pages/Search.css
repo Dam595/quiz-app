@@ -9,6 +9,7 @@
   flex-shrink: 0;
 }
 .search-search-bar i { color: var(--text-muted); font-size: 18px; }
+
 .search-filter-row {
   display: flex;
   gap: 8px;
@@ -35,6 +36,72 @@
   border-color: var(--purple);
   color: #fff;
 }
+
+/* ── Sort row ──────────────────────────────────────────────────────────────── */
+.search-sort-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 0 2px;
+}
+.search-sort-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+.search-sort-label i { font-size: 13px; }
+.search-sort-pills {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+  flex: 1;
+}
+.search-sort-pills::-webkit-scrollbar { display: none; }
+.search-sort-pill {
+  background: var(--white);
+  border: 1.5px solid #E2E0FF;
+  border-radius: 20px;
+  padding: 5px 11px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s;
+}
+.search-sort-pill i { font-size: 12px; }
+.search-sort-pill.active {
+  background: #EEF0FF;
+  border-color: var(--purple);
+  color: var(--purple);
+}
+.search-sort-active-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 6px;
+  background: #EEF0FF;
+  color: var(--purple);
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.search-sort-active-badge i { font-size: 10px; }
+
+/* ── Result card ────────────────────────────────────────────────────────────── */
 .search-result-card {
   background: var(--white);
   border-radius: 14px;
