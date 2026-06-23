@@ -255,3 +255,26 @@
   color: #1A9E61;
   cursor: default;
 }
+/* ── Explanation block ───────────────────────────────────────────────────── */
+.qr-explanation {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: 6px;
+  background: #FFFBEB;
+  border-radius: 8px;
+  padding: 7px 9px;
+  font-size: 11px;
+  color: #6B5E2F;
+  line-height: 1.5;
+}
+.qr-explanation i {
+  font-size: 13px;
+  color: #D4A017;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.qr-explanation strong {
+  font-weight: 700;
+  color: #5C4A1E;
+}

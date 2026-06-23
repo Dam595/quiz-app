@@ -158,7 +158,8 @@ export default function QuizResult({ quiz, answers, elapsed, onRetry, onHome, on
           </div>
         </div>
 
-        {/* ── Answer review ──────────────────────────────────────────────── */}
+       
+        {/* ── Answer review ──────────────────────────────────────────────────── */}
         <div>
           <div className="section-title">Xem lại đáp án</div>
           {quiz.questions.map((q, i) => {
@@ -176,6 +177,12 @@ export default function QuizResult({ quiz, answers, elapsed, onRetry, onHome, on
                   <div style={{ fontSize: 11, color: isCorrect ? '#1A9E61' : '#E24B4A' }}>
                     Đáp án: {q.options[q.correct]}
                   </div>
+                  {q.explanation && (
+                    <div className="qr-explanation">
+                      <i className="ti ti-bulb" />
+                      <span><strong>Lời giải:</strong> {q.explanation}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             )
