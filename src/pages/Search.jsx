@@ -87,45 +87,50 @@ export default function Search({ onNavigate, onSelectQuiz }) {
         </button>
       </div>
 
-      <div className="screen-body" style={{ paddingTop: 12 }}>
+      {/* Filter + Sort nằm NGOÀI screen-body để không bị overflow ẩn */}
+      {searchTab === 'quizzes' && (
+        <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 6, padding: '10px 16px 0' }}>
+          {/* Difficulty filter */}
+          <div className="search-filter-row">
+            {difficulties.map(d => (
+              <button key={d} className={`search-filter-btn ${diff === d ? 'active' : ''}`}
+                onClick={() => setDiff(d)}>{d}</button>
+            ))}
+          </div>
+
+          {/* Subject filter */}
+          <div className="search-filter-row">
+            {subjects.map(s => (
+              <button key={s} className={`search-filter-btn ${subject === s ? 'active' : ''}`}
+                onClick={() => setSubject(s)}>{s}</button>
+            ))}
+          </div>
+
+          {/* Sort row */}
+          <div className="search-sort-row">
+            <span className="search-sort-label">
+              <i className="ti ti-arrows-sort" /> Sắp xếp:
+            </span>
+            <div className="search-sort-pills">
+              {SORT_OPTIONS.map(opt => (
+                <button
+                  key={opt.key}
+                  className={`search-sort-pill ${sortBy === opt.key ? 'active' : ''}`}
+                  onClick={() => setSortBy(opt.key)}
+                >
+                  <i className={`ti ${opt.icon}`} />
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="screen-body" style={{ paddingTop: 8 }}>
 
         {searchTab === 'quizzes' && (
           <>
-            {/* Difficulty filter */}
-            <div className="search-filter-row">
-              {difficulties.map(d => (
-                <button key={d} className={`search-filter-btn ${diff === d ? 'active' : ''}`}
-                  onClick={() => setDiff(d)}>{d}</button>
-              ))}
-            </div>
-
-            {/* Subject filter */}
-            <div className="search-filter-row">
-              {subjects.map(s => (
-                <button key={s} className={`search-filter-btn ${subject === s ? 'active' : ''}`}
-                  onClick={() => setSubject(s)}>{s}</button>
-              ))}
-            </div>
-
-            {/* Sort row */}
-            <div className="search-sort-row">
-              <span className="search-sort-label">
-                <i className="ti ti-arrows-sort" /> Sắp xếp:
-              </span>
-              <div className="search-sort-pills">
-                {SORT_OPTIONS.map(opt => (
-                  <button
-                    key={opt.key}
-                    className={`search-sort-pill ${sortBy === opt.key ? 'active' : ''}`}
-                    onClick={() => setSortBy(opt.key)}
-                  >
-                    <i className={`ti ${opt.icon}`} />
-                    {opt.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
             {/* Result count */}
             <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 600 }}>
               {quizResults.length} kết quả
